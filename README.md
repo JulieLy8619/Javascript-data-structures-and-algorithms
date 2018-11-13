@@ -1,3 +1,4 @@
 # data-structures-and-algorithms
 
-updating something so it will push, will come back to fix this.
+The overall purpose of this repository is for my code challenges for Code Fellows 301 and 401.
+
