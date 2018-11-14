@@ -82,9 +82,10 @@ Write a function named removeWithForEach that produces the same output as challe
 
 const removeWithForEach = (arr, callback) => {
   // Solution code here...
-  arr.forEach(function(value) {
-    removeElements (value);
+  arr.forEach( (value, idx, arr) => {
+    removeOne (value, arr);
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +100,11 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   // Solution code here...
-}
+  arr.forEach( (value, idx, arr) => {
+    removeOne (value, arr);
+  });
+  return arr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -120,7 +125,14 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
-}
+  const tempArray = [];
+  availableItems.forEach( (availableItems) => {
+    if (availableItems.available === true) {
+      tempArray.push(availableItems.name);
+    }
+  });
+  return tempArray;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -138,7 +150,20 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
-}
+  const tempArray2 = [];
+  arr.forEach( (val, idx, arr) => {
+    if ((val % 3 === 0) && (val % 5 === 0)) {
+      tempArray2.push('Fizz Buzz');
+    } else if(val % 3 === 0) {
+      tempArray2.push('Fizz');
+    } else if (val % 5 === 0) {
+      tempArray2.push('Buzz');
+    } else {
+      tempArray2.push(val);
+    }
+  });
+  return tempArray2;
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
