@@ -150,7 +150,20 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
-}
+  const tempArray2 = [];
+  arr.forEach( (val, idx, arr) => {
+    if ((val % 3 === 0) && (val % 5 === 0)) {
+      tempArray2.push('Fizz Buzz');
+    } else if(val % 3 === 0) {
+      tempArray2.push('Fizz');
+    } else if (val % 5 === 0) {
+      tempArray2.push('Buzz');
+    } else {
+      tempArray2.push(val);
+    }
+  });
+  return tempArray2;
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
