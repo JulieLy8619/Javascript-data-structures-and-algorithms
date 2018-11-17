@@ -14,7 +14,6 @@ For example:
 
 const isNum = (input) => {
   // return input.search(/\d/g ? 1 : 0);
-  
   if (typeof input === 'undefined') {
     return false;
   } else if (Number.isInteger(input)) {
@@ -96,7 +95,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let strArray = str.match(/[a-z|A-Z]*\s/g);
+  return strArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
