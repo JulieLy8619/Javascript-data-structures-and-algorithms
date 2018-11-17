@@ -74,7 +74,15 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  if (typeof input === 'undefined') {
+    return false;
+  } else if (Number.isInteger(input)) {
+    return false;
+  } else if (input.match(/^[Oo](ct)(ober)*$/g)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
