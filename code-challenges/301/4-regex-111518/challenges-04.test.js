@@ -13,10 +13,23 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  let tempStr = JSON.stringify(input);
-  return tempStr.search(/\d/ ? true : false);
+  // return input.search(/\d/g ? 1 : 0);
+  
+  if (typeof input === 'undefined') {
+    return false;
+  } else if (Number.isInteger(input)) {
+    return true;
+  } 
+  let tempAnswer = input.match(/\d/g);
+  if (tempAnswer === null) {
+    return false;
+  } else if (tempAnswer.length > 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
-//note to self need to come back t this, it is not returning false when there is no number in the string
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -27,9 +40,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-//match will return an array (search returns how many it found)
-  return str.match(/^[A-Z][a-z]*|\s[A-Z][a-z]*/g);
-  // return str.match(/^[A-Z][a-z]*/g);
+//note for self: match will return an array (search returns how many it found)
+  return str.match(/[A-Z][a-z]*/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,7 +51,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let answerArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!(arr[i][0].search(/[A-J]/g))) {
+      answerArr.push(arr[i]);
+    }
+  }
+  return answerArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
