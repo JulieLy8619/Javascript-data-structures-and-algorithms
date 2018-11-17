@@ -95,7 +95,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  let strArray = str.match(/[a-z|A-Z]*\s/g);
+  let strArray = str.match(/(\b)\w+\s+/g);
   return strArray;
 };
 
@@ -112,7 +112,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
