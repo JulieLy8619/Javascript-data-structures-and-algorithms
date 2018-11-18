@@ -14,9 +14,12 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let resultArr = [];
+  for (let i = 0; i < str.length; i++) {
+    resultArr.push(str.slice(i));
+  }
+  resultArr.push(''); //I'm pretty sure this is wrong. but I couldn't increase my array length to go one before (errored out and couldn't start at -1 because then it started from the back of the array)
+  return resultArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,8 +30,13 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
+const wordsToCharList = (str) => { //i changed the param to str instead of arr so it was a more clear variable
+  //also technically a string is an array already....
+  let resultArr = [];
+  for (let j = 0; j < str.length; j++) {
+    resultArr.push(str[j]);
+  }
+  return resultArr;
 };
 
 
@@ -75,9 +83,21 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let t = 0; t <recipe.ingredients.length; t++) {
+    let tempIngred = recipe.ingredients[t];
+
+    let tempindexnum1 = tempIngred.indexOf(' ');
+    let tempArr1 = tempIngred.slice(tempindexnum1, tempIngred.length);
+    tempArr1 = tempArr1.slice(2, tempIngred.length);
+
+    let tempindexnum2 = tempArr1.indexOf(' ');
+    let tempArr2 = tempArr1.slice(tempindexnum2, tempIngred.length);
+    tempArr2 = tempArr2.slice(1, tempIngred.length);
+    result.push(tempArr2);
+  }
   return result;
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -89,7 +109,19 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let t = 0; t <recipe.ingredients.length; t++) {
+    let tempIngred = recipe.ingredients[t];
+    let tempArr = tempIngred.split(' ');
+    let tempStr = '';
+    for (let w = 2; w < tempArr.length; w++) {
+      if (w !== (tempArr.length-1)) {
+        tempStr = tempStr + tempArr[w] + ' ';
+      } else {
+        tempStr = tempStr + tempArr[w];
+        result.push(tempStr);
+      }
+    }
+  }
   return result;
 }
 
@@ -105,7 +137,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let y = 0; y <recipe.steps.length; y++) {
+    let tempStep = recipe.steps[y];
+    let tempindexnum1 = tempStep.indexOf(' ');
+    let tempArr = tempStep.slice(0, tempindexnum1);
+    result.push(tempArr);
+  }
   return result;
 }
 
@@ -123,7 +160,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let u = 0; u < arr.length; u++) {
+    if ((arr[u])%2 === 0) {
+      arr.splice(u,1);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
