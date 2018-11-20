@@ -100,22 +100,24 @@ hasChildrenValues(characters, 'Eddard') will return false
 
 const hasChildrenValues = (arr, character) => {
   let answer = false;
+  //maybe I don't need to walk through all in the array
   for (let i = 0; i< arr.length; i++) {
     let tempChildrenArray = Object.values(arr[i].children)
-    if(tempChildrenArray.length === 0) {
-      answer = false;
-    } else {
+    if (tempChildrenArray.length > 0) {
       for (let p = 0; p <tempChildrenArray.length; p++) {
         if(tempChildrenArray[p] === character) {
           answer = true;
+          // return answer;
+          break;
         }
       }
-    }
+    } else if(tempChildrenArray.length === 0) {
+      //do I even need to check they have children
+      answer = false;
+    } 
   }
   return answer;
 };
-
-//need to make a change for git commit
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
