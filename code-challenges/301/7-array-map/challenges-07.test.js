@@ -73,7 +73,13 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let returnAnswer = [];
+  arr.map( (num) => {
+    // if(num%2 === 0) {
+    returnAnswer.push(isNaN(num) ? 'N/A' : (num%2 === 0 ? 'even' : 'odd'))
+    // }
+  })
+  return returnAnswer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,7 +125,11 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let answerArr = [];
+  arr.map( (val) => {
+    answerArr.push(val.ability.name);
+  })
+  return answerArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -166,7 +176,17 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  let answerArr = [];
+  
+  for (let t = 0; t < arr.length; t++) {
+    let tempObj = new Object();
+    tempObj.name = '';
+    tempObj.total = 0;
+    tempObj.name = arr[t].stat.name;
+    tempObj.total = arr[t].effort + arr[t].baseStat;
+    answerArr.push(tempObj);
+  }
+  return answerArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
