@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prework401Chall1", "Prework401Chall1\Prework401Chall1.csproj", "{CDB3521C-0519-4901-A418-1DE67B6297E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prework401CodeChall", "Prework401Chall1\Prework401CodeChall.csproj", "{CDB3521C-0519-4901-A418-1DE67B6297E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
