@@ -10,30 +10,110 @@ namespace Prework401Chall1
     {
         static void Main(string[] args)
         {
-            ArrayMax();
-            Console.ReadLine();
-        }
-        private static void ArrayMax()
-        {
+            //part 1 of problem 1, collect numbers from user and populate array
             int guessCounter = 0;
             string[] numArray = new string[5];
             string tempNum = "";
             do
             {
-                Console.Write("Please enter a number between 1 to 10? \n");
+                Console.WriteLine("Please enter a number between 1 to 10?");
                 tempNum = Console.ReadLine();
                 if (tempNum == "1" || tempNum == "2" || tempNum == "3" || tempNum == "4" || tempNum == "5" || tempNum == "6" || tempNum == "7" || tempNum == "8" || tempNum == "9" || tempNum == "10")
                 {
                     numArray[guessCounter] = tempNum;
-                    Console.Write(numArray[guessCounter]); //this shows there is info in the array
+                    //Console.WriteLine(numArray[guessCounter]); //this shows there is info in the array
                     guessCounter++;
                 }
                 else
                 {
-                    Console.Write("that isn't a valid entry");
+                    Console.WriteLine("that isn't a valid entry");
                 }
-                Console.Write("guess counter " + guessCounter);
             } while (guessCounter < 5);
+
+            //part 2 of problem 1: prints array and ask user for a number and return a score
+            Console.Write("The numbers in the list: ");
+            for (int i = 0; i < 5;i++)
+            {
+                Console.Write(numArray[i] + " ");
+            }
+            Console.WriteLine("Please select a number from the list?");
+            int userChoice = Console.Read();
+            Console.WriteLine("userschoice " + userChoice);
+            //it defaults to 50, and if I put in a number it does i dont know math to it (1 put it at 49, 3 put it at 51
+            ArrayMax(numArray,userChoice);
+            Console.ReadLine();
+        }
+
+        private static void ArrayMax(string[] array, int selection)
+        {
+            int scoreMult1 = 1;
+            int scoreMult2 = 1;
+            int scoreMult3 = 1;
+            int scoreMult4 = 1;
+            int scoreMult5 = 1;
+            int scoreMult6 = 1;
+            int scoreMult7 = 1;
+            int scoreMult8 = 1;
+            int scoreMult9 = 1;
+            int scoreMult10 = 1;
+            int score = 0;
+
+            //iterate through array and count number of times a number was selected
+            for (int i = 0; i < 5; i++)
+            {
+                if (array[i] == "1")
+                    scoreMult1++;
+                else if (array[i] == "2")
+                    scoreMult2++;
+                else if (array[i] == "3")
+                    scoreMult3++;
+                else if (array[i] == "4")
+                    scoreMult4++;
+                else if (array[i] == "5")
+                    scoreMult5++;
+                else if (array[i] == "6")
+                    scoreMult6++;
+                else if (array[i] == "7")
+                    scoreMult7++;
+                else if (array[i] == "8")
+                    scoreMult8++;
+                else if (array[i] == "9")
+                    scoreMult9++;
+                else if (array[i] == "10")
+                    scoreMult10++;
+            }
+            Console.WriteLine("selection :" + selection);
+            if (selection == 1)
+                score = selection * scoreMult1;
+            else if (selection == 2)
+                score = selection * scoreMult2;
+            else if (selection == 3)
+                score = selection * scoreMult3;
+            else if (selection == 4)
+                score = selection * scoreMult4;
+            else if (selection == 5)
+                score = selection * scoreMult5;
+            else if (selection == 6)
+                score = selection * scoreMult6;
+            else if (selection == 7)
+                score = selection * scoreMult7;
+            else if (selection == 8)
+                score = selection * scoreMult8;
+            else if (selection == 9)
+                score = selection * scoreMult9;
+            else if (selection == 10)
+                score = selection * scoreMult10;
+ 
+            Console.Write("your score is: ");
+            Console.WriteLine(score); //score is zero because that was my defaul and I never make it into my if's
+            Console.ReadLine();
         }
     }
 }
+
+/*
+Questions: 
+-How do I add documents? (like a readme.md)
+-from my research, i can't just show the array, i have to loop through it, can you verify this is true
+-https://docs.microsoft.com/en-us/azure/devops/repos/git/gitworkflow?view=vsts didn't tell me how to do a .gitignore
+*/
