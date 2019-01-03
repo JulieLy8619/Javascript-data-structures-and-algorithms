@@ -37,14 +37,14 @@ namespace Prework401Chall1
                 Console.Write(numArray[i] + " ");
             }
             Console.WriteLine("Please select a number from the list?");
-            int userChoice = Console.Read();
-            Console.WriteLine("userschoice " + userChoice);
+            string userChoice = Console.ReadLine();
+            Console.WriteLine("userschoice " + userChoice); //just for testing
             //it defaults to 50, and if I put in a number it does i dont know math to it (1 put it at 49, 3 put it at 51
             ArrayMax(numArray,userChoice);
             Console.ReadLine();
         }
 
-        private static void ArrayMax(string[] array, int selection)
+        private static void ArrayMax(string[] array, string selection)
         {
             int scoreMult1 = 1;
             int scoreMult2 = 1;
@@ -56,7 +56,8 @@ namespace Prework401Chall1
             int scoreMult8 = 1;
             int scoreMult9 = 1;
             int scoreMult10 = 1;
-            int score = 0;
+            int score = 1;
+            int intSelection = 0;
 
             //iterate through array and count number of times a number was selected
             for (int i = 0; i < 5; i++)
@@ -82,27 +83,45 @@ namespace Prework401Chall1
                 else if (array[i] == "10")
                     scoreMult10++;
             }
-            Console.WriteLine("selection :" + selection);
-            if (selection == 1)
-                score = selection * scoreMult1;
-            else if (selection == 2)
-                score = selection * scoreMult2;
-            else if (selection == 3)
-                score = selection * scoreMult3;
-            else if (selection == 4)
-                score = selection * scoreMult4;
-            else if (selection == 5)
-                score = selection * scoreMult5;
-            else if (selection == 6)
-                score = selection * scoreMult6;
-            else if (selection == 7)
-                score = selection * scoreMult7;
-            else if (selection == 8)
-                score = selection * scoreMult8;
-            else if (selection == 9)
-                score = selection * scoreMult9;
-            else if (selection == 10)
-                score = selection * scoreMult10;
+            Console.WriteLine("selection :" + selection); //just for testing
+            if (selection == "1")
+            {
+                intSelection = 1;
+                score = intSelection * scoreMult1;
+            }
+            else if (selection == "2")
+            {
+                intSelection = 2;
+                score = intSelection * scoreMult2;
+            }
+            else if (selection == "3")
+            {
+                intSelection = 3;
+                score = intSelection * scoreMult3;
+            }
+            else if (selection == "4")
+            {
+                intSelection = 4;
+                score = intSelection * scoreMult4;
+            }
+            else if (selection == "5")
+            {
+                intSelection
+                score = intSelection * scoreMult5;
+            }
+            else if (selection == "6")
+            {
+                intSelection
+                score = intSelection * scoreMult6;
+            }
+            else if (selection == "7")
+                score = intSelection * scoreMult7;
+            else if (selection == "8")
+                score = intSelection * scoreMult8;
+            else if (selection == "9")
+                score = intSelection * scoreMult9;
+            else if (selection == "10")
+                score = intSelection * scoreMult10;
  
             Console.Write("your score is: ");
             Console.WriteLine(score); //score is zero because that was my defaul and I never make it into my if's
@@ -115,5 +134,4 @@ namespace Prework401Chall1
 Questions: 
 -How do I add documents? (like a readme.md)
 -from my research, i can't just show the array, i have to loop through it, can you verify this is true
--https://docs.microsoft.com/en-us/azure/devops/repos/git/gitworkflow?view=vsts didn't tell me how to do a .gitignore
 */
