@@ -7,7 +7,7 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
-  return (arr.sort(function(a,b) {
+  return (arr.sort( function(a,b) {
     return (b - a);
   }));
 };
@@ -33,7 +33,7 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  return (arr.sort(function(a,b) {
+  return (arr.sort( function(a,b) {
     return (a.length - b.length);
   }));
 };
@@ -47,7 +47,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  return (arr.sort(function(a,b) {
+  return (arr.sort( function(a,b) {
     return (a.localeCompare(b));
   }));
 };
@@ -107,7 +107,7 @@ const people = [
 
 const sortPeople = (arr) => {
   arr.sort( (a,b) => {
-    return a.lastName > b.lastName;
+    return ((a.lastName > b.lastName) ? 1 : ((b.lastname > a.lastname) ? -1 : 0))
   });
   return arr;
 };
@@ -130,9 +130,9 @@ const sortPeopleBetter = (arr) => {
     if (a.lastName === b.lastName && a.firstName === b.firstName) {
       return a.age > b.age;
     } else if(a.lastName === b.lastName) {
-      return a.firstName > b.firstName;
+      return ((a.firstName > b.firstName) ? 1 : ((b.firstname > a.firstname) ? -1 : 0));
     } else {
-      return a.lastName > b.lastName;
+      return ((a.lastName > b.lastName) ? 1 : ((b.lastname > a.lastname) ? -1 : 0));
     }
   });
   return arr;
@@ -161,7 +161,10 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  return arr.sort( (a,b) => {
+    const order = { Sunday: 1, Monday: 2, Tuesday: 3, Wednesday: 4, Thursday: 5, Friday: 6, Saturday: 7 };
+    return order[a.dayOfWeek] - order[b.dayOfWeek];
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,7 +178,9 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  return arr.sort( (a,b) => {
+    return (a.end-a.start) - (b.end-b.start);
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------

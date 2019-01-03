@@ -51,7 +51,7 @@ const validateEmail = (email) => {
   // ^([A-z]|[0-9])*\.([A-z]|[0-9])* //gets like word.word
   // (^([A-z]|[0-9])*\.([A-z]|[0-9])*)|(^([A-z]|[0-9])*)(\.|\@) //gets me to word@ or word.word
   // \@([A-z]|[0-9])*((.com)|(.net)|(.org))$ //gets @ to end
-
+  // [A-z]|[0-9] should be able to be replaced with \w
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
