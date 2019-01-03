@@ -9,12 +9,10 @@ Then, write a function named speaker that takes in a string and a callback funct
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
   return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-  // Solution code here...
   return callback(message);
 };
 
@@ -35,15 +33,13 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
   arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
   for (let i = 0; i < times; i++) {
     callback(arr,num);
-  };
+  }
   return arr;
 };
 
@@ -60,14 +56,12 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeOne = (num, arr) => {
-  // Solution code here...
   if (num % 3 === 2) {
     arr.pop();
   }
 };
 
 const removeElements = (arr, callback) => {
-  // Solution code here...
   for (let i = 0; i < arr.length; i++) {
     callback(arr[i],arr);
   }
@@ -81,9 +75,8 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  // Solution code here...
   arr.forEach( (value, idx, arr) => {
-    removeOne (value, arr);
+    callback(value, arr);
   });
   return arr;
 };
@@ -99,7 +92,6 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
   arr.forEach( (value, idx, arr) => {
     removeOne (value, arr);
   });
@@ -124,11 +116,10 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
   const tempArray = [];
-  availableItems.forEach( (availableItems) => {
-    if (availableItems.available === true) {
-      tempArray.push(availableItems.name);
+  availableItems.forEach( (object) => {
+    if (object.available === true) {
+      tempArray.push(object.name);
     }
   });
   return tempArray;
@@ -149,9 +140,8 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
   const tempArray2 = [];
-  arr.forEach( (val, idx, arr) => {
+  arr.forEach( (val) => {
     if ((val % 3 === 0) && (val % 5 === 0)) {
       tempArray2.push('Fizz Buzz');
     } else if(val % 3 === 0) {
