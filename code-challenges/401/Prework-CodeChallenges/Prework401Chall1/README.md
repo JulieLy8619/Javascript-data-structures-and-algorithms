@@ -11,3 +11,11 @@
 
 ## Problem 4 Sum of Rows
 #### Task: Take in a matrix from the user and return a single dimension array of the sum of the rows of the matrix
+
+## Images showing successful output
+#### Shows all outputs as expected (like it was a leap year and it was a perfect sequence)
+![alt text](https://github.com/JulieLy8619/data-structures-and-algorithms/blob/master/code-challenges/401/Prework-CodeChallenges/Prework401Chall1/images/everythingWorking.JPG)
+#### Still shows correct output for bad data (like it was not a leap year and it was not a perfect sequence )
+![alt text](https://github.com/JulieLy8619/data-structures-and-algorithms/blob/master/code-challenges/401/Prework-CodeChallenges/Prework401Chall1/images/stillWorkingButOtherResults.JPG)
+#### To show the corrected output (a 1 dimension array) for problem 4 because I had it as the last column in the matrix in the other images
+![alt text](https://github.com/JulieLy8619/data-structures-and-algorithms/blob/master/code-challenges/401/Prework-CodeChallenges/Prework401Chall1/images/correctOutputForProb4.JPG)
