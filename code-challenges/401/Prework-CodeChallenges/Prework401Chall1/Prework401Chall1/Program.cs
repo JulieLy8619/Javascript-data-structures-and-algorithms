@@ -182,10 +182,15 @@ namespace Prework401Chall1
                 {
                     int p4TempNum = rand.Next(1, 100);
                     p4FuncMatrix[i,j] = p4TempNum;
-                    Console.Write(p4FuncMatrix[i, j] + " ");
+                    Console.Write(p4FuncMatrix[i, j] + " "); //so you can see the matrix
                     p4FunctionanswerArray[i] = p4FunctionanswerArray[i] + p4TempNum;
                 }
-                Console.WriteLine(p4FunctionanswerArray[i]);
+                Console.WriteLine();
+            }
+            Console.Write("Answer for total for each row in an array: ");
+            for (int i = 0; i < col; i++)
+            {
+                Console.Write(p4FunctionanswerArray[i] + " ");
             }
         }
     }
