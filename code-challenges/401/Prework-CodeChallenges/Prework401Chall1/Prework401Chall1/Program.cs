@@ -49,7 +49,11 @@ namespace Prework401Chall1
             //******end of prob 2 in MAIN
 
             //******calls prob 3 method (just highlighting for easier grading) ******//
-
+            //part 1, collect numbers from user
+            //how many numbers am I supposed to collect? (do while?)
+            Console.WriteLine("Please enter a number?")
+            // enter it into an array (so can pass it into the function
+            PerfectSequence();
             //******end of prob 3 in MAIN
 
             //******calls prob 4 method (just highlighting for easier grading) ******//
@@ -132,6 +136,10 @@ namespace Prework401Chall1
                 Console.Write($"{year} is a leap year");
             else
                 Console.Write($"{year} is not a leap year");
+        }
+        private static void PerfectSequence()
+        {
+
         }
     }
 }
