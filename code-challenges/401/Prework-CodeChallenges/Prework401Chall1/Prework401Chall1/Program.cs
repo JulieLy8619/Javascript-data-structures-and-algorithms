@@ -35,11 +35,28 @@ namespace Prework401Chall1
             {
                 Console.Write(p1NumArray[i] + " ");
             }
-            Console.WriteLine("Please select a number from the list?");
-            int userChoice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please select a number from 1-10 and I'll tell you your score?");
+            int p1UserChoice = Convert.ToInt32(Console.ReadLine());
+            
             //******calls prob 1 method (just highlighting for easier grading) *****//
-            ArrayMax(p1NumArray, userChoice);
+            ArrayMax(p1NumArray, p1UserChoice);
             //*****end of prob 1 in MAIN ****//
+
+            //******calls prob 2 method (just highlighting for easier grading) ******//
+            Console.WriteLine("Please select a year and I will tell you if it is a leap year or not");
+            int p2UserYearInput = Convert.ToInt32(Console.ReadLine());
+            LeapYear(p2UserYearInput);
+            //******end of prob 2 in MAIN
+
+            //******calls prob 3 method (just highlighting for easier grading) ******//
+
+            //******end of prob 3 in MAIN
+
+            //******calls prob 4 method (just highlighting for easier grading) ******//
+
+            //******end of prob 4 in MAIN
+            
+
             Console.ReadLine();
         }
 
@@ -107,20 +124,19 @@ namespace Prework401Chall1
             Console.Write("your score is: ");
             Console.WriteLine(score); 
         }
+        private static void LeapYear(int year)
+        {
+            if (year % 400 == 0)
+                Console.Write($"{year} is a leap year");
+            else if (year % 4 == 0 && year % 100 != 0)
+                Console.Write($"{year} is a leap year");
+            else
+                Console.Write($"{year} is not a leap year");
+        }
     }
 }
 
 /*
-Questions: 
--How do I add documents? (like a readme.md)
--from my research, i can't just show the array, i have to loop through it, can you verify this is true
+Note to self: 
 -when submit note this was in .netframework and already talked to amanada and i wouldn't lose points for it.
-
-    
--note to self use .net core moving forward
--note to self, can use ubuntu for git ACP still if want but should get famil with power shell (not same as CDM)
--be able to and famil with ACP in VS (as MS uses that)
--but it really is whatever is most comfortable for you
--add docs with right click on folder and add file
-
 */
