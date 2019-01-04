@@ -10,6 +10,7 @@ namespace Prework401Chall1
     {
         static void Main(string[] args)
         {
+
             //part 1 of problem 1, collect numbers from user and populate array
             int p1GuessCounter = 0;
             string[] p1NumArray = new string[5];
@@ -37,7 +38,8 @@ namespace Prework401Chall1
             }
             Console.WriteLine("Please select a number from 1-10 and I'll tell you your score?");
             int p1UserChoice = Convert.ToInt32(Console.ReadLine());
-            
+
+          
             //******calls prob 1 method (just highlighting for easier grading) *****//
             ArrayMax(p1NumArray, p1UserChoice);
             //*****end of prob 1 in MAIN ****//
@@ -46,14 +48,17 @@ namespace Prework401Chall1
             Console.WriteLine("Please select a year and I will tell you if it is a leap year or not");
             int p2UserYearInput = Convert.ToInt32(Console.ReadLine());
             LeapYear(p2UserYearInput);
-            //******end of prob 2 in MAIN
-
+            //******end of prob 2 in MAIN*******//
+            
             //******calls prob 3 method (just highlighting for easier grading) ******//
-            //part 1, collect numbers from user
-            //how many numbers am I supposed to collect? (do while?)
-            Console.WriteLine("Please enter a number?")
-            // enter it into an array (so can pass it into the function
-            PerfectSequence();
+            //the instruction didn't state to get the array from the user...
+//            int[] p3ParamArrayBad = new int[] { 1, 2, 3, 4, 5 };
+            int[] p3ParamArrayGood = new int[] {1,3,2};
+//            int[] p3ParamArrayGood2 = new int[] {0, 0, 0};
+//            int[] p3ParamArrayBad2 = new int[] { 1, 3, 2, 0 };
+//            int[] p3ParamArrayBad3 = new int[] { 1, 3, -2, 0 };
+            //would 1,3,2,0 be a perfect sequence? I don't think so because the prod would become zero when it gets to the last digit...
+            PerfectSequence(p3ParamArrayGood);
             //******end of prob 3 in MAIN
 
             //******calls prob 4 method (just highlighting for easier grading) ******//
@@ -131,13 +136,42 @@ namespace Prework401Chall1
         private static void LeapYear(int year)
         {
             if (year % 400 == 0)
-                Console.Write($"{year} is a leap year");
+                Console.WriteLine($"{year} is a leap year");
             else if (year % 4 == 0 && year % 100 != 0)
-                Console.Write($"{year} is a leap year");
+                Console.WriteLine($"{year} is a leap year");
             else
-                Console.Write($"{year} is not a leap year");
+                Console.WriteLine($"{year} is not a leap year");
         }
-        private static void PerfectSequence()
+        private static void PerfectSequence(int[] arr)
+        {
+            Console.WriteLine("Evaluating Array: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
+            int sumTotal = 0;
+            int prodTotal = 1; 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                //I don't need to test for other than integers (like strings) because it would have errored out at function call
+                if (arr[i] < 0)
+                {
+                    Console.WriteLine("No");
+                    break; //does this break the FOR loop or just the IF?
+                }
+                else
+                {
+                    sumTotal = sumTotal + arr[i];
+                    prodTotal = prodTotal * arr[i];
+                }
+            }
+            if (sumTotal == prodTotal)
+                Console.WriteLine("Yes");
+            else
+                Console.WriteLine("No");
+        }
+        private static void SumRows()
         {
 
         }
@@ -146,5 +180,5 @@ namespace Prework401Chall1
 
 /*
 Note to self: 
--when submit note this was in .netframework and already talked to amanada and i wouldn't lose points for it.
+-when submit note this was in console app .netframework and already talked to amanada and i wouldn't lose points for it (because this was just prework).
 */
