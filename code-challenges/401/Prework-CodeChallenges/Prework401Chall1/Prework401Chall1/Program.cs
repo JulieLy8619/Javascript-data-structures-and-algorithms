@@ -36,6 +36,7 @@ namespace Prework401Chall1
             {
                 Console.Write(p1NumArray[i] + " ");
             }
+            Console.WriteLine();
             Console.WriteLine("Please select a number from 1-10 and I'll tell you your score?");
             int p1UserChoice = Convert.ToInt32(Console.ReadLine());
 
@@ -62,9 +63,14 @@ namespace Prework401Chall1
             //******end of prob 3 in MAIN
 
             //******calls prob 4 method (just highlighting for easier grading) ******//
-
+            //ask user for dimension of matrix, I chose to randomly fill in the matrix than make the user populate it all
+            Console.WriteLine("Please provide the # of COLUMNS you would like for the Matrix: ");
+            int p4UserColNum = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please provide the # of ROWS you would like for the Matrix: ");
+            int p4UserRowNum = Convert.ToInt32(Console.ReadLine());
+            SumRows(p4UserColNum, p4UserRowNum);
             //******end of prob 4 in MAIN
-            
+
 
             Console.ReadLine();
         }
@@ -128,7 +134,7 @@ namespace Prework401Chall1
             else if (selection == 10)
                 score = selection * scoreMult10;
             else
-                Console.Write("You didn't pick a possible number in the list");
+                Console.WriteLine("You didn't pick a possible number in the list");
  
             Console.Write("your score is: ");
             Console.WriteLine(score); 
@@ -171,9 +177,23 @@ namespace Prework401Chall1
             else
                 Console.WriteLine("No");
         }
-        private static void SumRows()
+        private static void SumRows(int col, int row)
         {
-
+            int[] p4FunctionanswerArray = new int[col];
+            int[,] p4FuncMatrix = new int[row, col];
+            Random rand = new Random();
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    int p4TempNum = rand.Next(1, 100); //does this regenerate with each loop, yes
+                    //Console.WriteLine("what is the random number" + p4TempNum);
+                    p4FuncMatrix[i,j] = p4TempNum;
+                    Console.Write(p4FuncMatrix[i, j] + " ");
+                    p4FunctionanswerArray[i] = p4FunctionanswerArray[i] + p4TempNum;
+                }
+                Console.WriteLine(p4FunctionanswerArray[i]);
+            }
         }
     }
 }

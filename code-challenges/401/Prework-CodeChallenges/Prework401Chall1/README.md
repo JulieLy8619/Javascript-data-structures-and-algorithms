@@ -10,4 +10,4 @@
 #### Task: Take in an array and determine if it is a perfect sequence or not.
 
 ## Problem 4 Sum of Rows
-#### Task: Take in a matrix and return a single dimension array of the sum of the rows of the matrix
+#### Task: Take in a matrix from the user and return a single dimension array of the sum of the rows of the matrix
