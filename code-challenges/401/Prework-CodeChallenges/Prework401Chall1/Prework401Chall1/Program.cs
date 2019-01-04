@@ -10,7 +10,7 @@ namespace Prework401Chall1
     {
         static void Main(string[] args)
         {
-
+            //*****start of prob 1 in MAIN ****//
             //part 1 of problem 1, collect numbers from user and populate array
             int p1GuessCounter = 0;
             string[] p1NumArray = new string[5];
@@ -37,22 +37,20 @@ namespace Prework401Chall1
                 Console.Write(p1NumArray[i] + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("Please select a number from 1-10 and I'll tell you your score?");
+            Console.WriteLine("Please select a number and I'll tell you your score?");
             int p1UserChoice = Convert.ToInt32(Console.ReadLine());
 
-          
-            //******calls prob 1 method (just highlighting for easier grading) *****//
             ArrayMax(p1NumArray, p1UserChoice);
             //*****end of prob 1 in MAIN ****//
 
-            //******calls prob 2 method (just highlighting for easier grading) ******//
+            //*****start of prob 2 in MAIN ****//
             Console.WriteLine("Please select a year and I will tell you if it is a leap year or not");
             int p2UserYearInput = Convert.ToInt32(Console.ReadLine());
             LeapYear(p2UserYearInput);
             //******end of prob 2 in MAIN*******//
-            
-            //******calls prob 3 method (just highlighting for easier grading) ******//
-            //the instruction didn't state to get the array from the user...
+
+            //*****start of prob 3 in MAIN ****//
+            //the instruction didn't state to get the array from the user, Amanda said it is OK I hard coded in the information
 //            int[] p3ParamArrayBad = new int[] { 1, 2, 3, 4, 5 };
             int[] p3ParamArrayGood = new int[] {1,3,2};
 //            int[] p3ParamArrayGood2 = new int[] {0, 0, 0};
@@ -62,7 +60,7 @@ namespace Prework401Chall1
             PerfectSequence(p3ParamArrayGood);
             //******end of prob 3 in MAIN
 
-            //******calls prob 4 method (just highlighting for easier grading) ******//
+            //*****start of prob 4 in MAIN ****//
             //ask user for dimension of matrix, I chose to randomly fill in the matrix than make the user populate it all
             Console.WriteLine("Please provide the # of COLUMNS you would like for the Matrix: ");
             int p4UserColNum = Convert.ToInt32(Console.ReadLine());
@@ -70,7 +68,6 @@ namespace Prework401Chall1
             int p4UserRowNum = Convert.ToInt32(Console.ReadLine());
             SumRows(p4UserColNum, p4UserRowNum);
             //******end of prob 4 in MAIN
-
 
             Console.ReadLine();
         }
@@ -162,10 +159,7 @@ namespace Prework401Chall1
             {
                 //I don't need to test for other than integers (like strings) because it would have errored out at function call
                 if (arr[i] < 0)
-                {
-                    Console.WriteLine("No");
-                    break; //does this break the FOR loop or just the IF?
-                }
+                    break;
                 else
                 {
                     sumTotal = sumTotal + arr[i];
@@ -186,8 +180,7 @@ namespace Prework401Chall1
             {
                 for (int j = 0; j < col; j++)
                 {
-                    int p4TempNum = rand.Next(1, 100); //does this regenerate with each loop, yes
-                    //Console.WriteLine("what is the random number" + p4TempNum);
+                    int p4TempNum = rand.Next(1, 100);
                     p4FuncMatrix[i,j] = p4TempNum;
                     Console.Write(p4FuncMatrix[i, j] + " ");
                     p4FunctionanswerArray[i] = p4FunctionanswerArray[i] + p4TempNum;
